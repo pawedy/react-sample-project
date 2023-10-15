@@ -10,3 +10,7 @@ export const contentStyles: SxProps<Theme> = {
   display: 'flex',
   flexGrow: 1,
 };
+
+export const mainStyles: SxProps<Theme> = {
+  p: 2,
+};
