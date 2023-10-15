@@ -1,7 +1,10 @@
 import { useMemo } from 'react';
 import { SWApiResource } from '../enums';
 import useApi, { ApiRequest } from './use-api';
-import { ApiResponseListResponse, ApiResponseSingleResponse } from '../models';
+import {
+  ApiResponseListResponse,
+  ApiResponseSingleResponse,
+} from './api.interfaces';
 
 const createRequestUrl = (base: string, path: string, id?: string): string => {
   if (id) {
@@ -25,13 +28,13 @@ const useStarWarsApi = <T>(resource: SWApiResource, id?: string): T | null => {
   return data;
 };
 
-export const getStarWarsList = (
+export const useStarWarsList = (
   resource: SWApiResource
 ): ApiResponseListResponse | null => {
   return useStarWarsApi<ApiResponseListResponse>(resource);
 };
 
-export const getStarWarsEntry = <T>(
+export const useStarWarsEntry = <T>(
   resource: SWApiResource,
   id: string
 ): ApiResponseSingleResponse<T> | null => {
