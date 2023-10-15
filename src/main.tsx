@@ -1,22 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './features/App';
+import { People } from './features/People';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './index.css';
 
 const router = createBrowserRouter([
   {
-    path: '',
     element: <App />,
     errorElement: <div>Unexpected error</div>,
     children: [
       {
         path: '/',
-        element: <div>Main</div>,
+        element: <People />,
       },
       {
-        path: 'characters',
-        element: <div>Characters</div>,
+        path: '/:id',
+        element: <div>Person</div>,
       },
       {
         path: 'vehicles',

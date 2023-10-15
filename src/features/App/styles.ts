@@ -9,8 +9,10 @@ export const appStyles: SxProps<Theme> = {
 export const contentStyles: SxProps<Theme> = {
   display: 'flex',
   flexGrow: 1,
+  overflow: 'hidden',
 };
 
 export const mainStyles: SxProps<Theme> = {
   p: 2,
+  overflowY: 'auto',
 };
