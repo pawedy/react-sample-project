@@ -2,6 +2,14 @@
 
 This app uses `https://www.swapi.tech/` to display catalogue of Star Wars characters, planets and vehicles.
 
+## TODO
+
+- Better error and loading handling 
+- Unit and E2E tests
+- Caching
+- Styling
+- Avatars and more details
+
 ## Prerequisites
 
 Node.js and npm are essential to run this project.
