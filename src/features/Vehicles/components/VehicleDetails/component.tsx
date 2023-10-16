@@ -5,11 +5,8 @@ import { Loader } from '../../../../components/Loader';
 import { useVehicle } from '../..';
 
 export function VehicleDetails() {
-  let { vehicleId } = useParams();
-  if (!vehicleId) {
-    return <span>Vehicle not found</span>;
-  }
-  const vehicle = useVehicle(vehicleId);
+  const { vehicleId } = useParams();
+  const vehicle = useVehicle(vehicleId ?? '');
 
   if (!vehicle) {
     return <Loader />;

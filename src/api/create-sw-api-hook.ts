@@ -8,12 +8,12 @@ export const createSWListHook = (
 ): ((sort?: boolean) => ListItem[]) => {
   return (sort: boolean = true): ListItem[] => {
     const list = useStarWarsList(resource);
-    const results = list?.results ?? [];
+    const results = useMemo(() => list?.results ?? [], [list]);
     if (!sort) {
       return results;
     }
 
-    const sorted = useMemo(() => sortListAlphabetically(results), [list]);
+    const sorted = useMemo(() => sortListAlphabetically(results), [results]);
 
     return sorted;
   };

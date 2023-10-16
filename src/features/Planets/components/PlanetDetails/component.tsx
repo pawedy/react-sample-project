@@ -5,11 +5,8 @@ import { usePlanet } from '../../hooks/use-planet';
 import { Loader } from '../../../../components/Loader';
 
 export function PlanetDetails() {
-  let { planetId } = useParams();
-  if (!planetId) {
-    return <span>Planet not found</span>;
-  }
-  const planet = usePlanet(planetId);
+  const { planetId } = useParams();
+  const planet = usePlanet(planetId ?? '');
 
   if (!planet) {
     return <Loader />;

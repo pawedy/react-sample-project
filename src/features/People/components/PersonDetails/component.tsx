@@ -6,11 +6,8 @@ import { Loader } from '../../../../components/Loader';
 
 export function PersonDetails() {
   const navigate = useNavigate();
-  let { personId } = useParams();
-  if (!personId) {
-    return <span>Character not found</span>;
-  }
-  const person = usePerson(personId);
+  const { personId } = useParams();
+  const person = usePerson(personId ?? '');
 
   if (!person) {
     return <Loader />;

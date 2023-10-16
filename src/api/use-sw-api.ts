@@ -21,9 +21,13 @@ const useStarWarsApi = <T>(resource: SWApiResource, id?: string): T | null => {
     return {
       input: new Request(url),
     };
-  }, []);
+  }, [resource, id]);
 
-  const [data] = useApi<T>(request);
+  const [data, error] = useApi<T>(request);
+
+  if (error) {
+    throw new Error(error);
+  }
 
   return data;
 };

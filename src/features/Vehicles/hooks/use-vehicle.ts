@@ -1,4 +1,3 @@
-import { useCallback, useMemo } from 'react';
 import { VehicleApiProps, createSWEntryHook } from '../../../api';
 import { SWApiResource } from '../../../enums';
 import { mapUrlToId } from '../../../utils';

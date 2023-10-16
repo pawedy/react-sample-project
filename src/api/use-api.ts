@@ -25,7 +25,7 @@ const useApi = <T>(request: ApiRequest): [T | null, string | null] => {
       .catch((err) => {
         setError(err.message);
       });
-  }, [request]);
+  }, [input, init]);
 
   return [results, error];
 };

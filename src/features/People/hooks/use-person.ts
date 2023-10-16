@@ -1,13 +1,10 @@
-import { useCallback, useMemo } from 'react';
 import {
   ListItem,
   PersonApiProps,
-  PlanetApiProps,
   createSWEntryHook,
 } from '../../../api';
 import { SWApiResource } from '../../../enums';
 import { mapUrlToId } from '../../../utils';
-import { usePlanet } from '../../Planets/hooks/use-planet';
 import { usePlanets } from '../../Planets/hooks/use-planets';
 
 export interface Person extends Omit<PersonApiProps, 'homeworld'> {
