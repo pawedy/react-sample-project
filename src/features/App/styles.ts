@@ -14,5 +14,8 @@ export const contentStyles: SxProps<Theme> = {
 
 export const mainStyles: SxProps<Theme> = {
   p: 2,
+  flexGrow: 1,
   overflowY: 'auto',
+  display: 'flex',
+  flexDirection: 'column',
 };

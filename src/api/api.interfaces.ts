@@ -26,7 +26,7 @@ export interface ApiResponseSingleResponse<EntryProperties> {
   result: ApiResponseSingleResult<EntryProperties>;
 }
 
-export interface PersonProps {
+export interface PersonApiProps {
   height: string;
   mass: string;
   hair_color: string;
@@ -41,7 +41,7 @@ export interface PersonProps {
   url: string;
 }
 
-export interface PlanetProps {
+export interface PlanetApiProps {
   diameter: string;
   rotation_period: string;
   orbital_period: string;
@@ -56,7 +56,7 @@ export interface PlanetProps {
   url: string;
 }
 
-export interface VehicleProps {
+export interface VehicleApiProps {
   model: string;
   vehicle_class: string;
   manufacturer: string;

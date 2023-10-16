@@ -1,9 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './features/App';
-import { People } from './features/People';
+import { PeopleList } from './features/People';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './index.css';
+import { PersonDetails } from './features/People/components/PersonDetails';
+import { PlanetDetails, PlanetsList } from './features/Planets';
+import { VehicleDetails, VehiclesList } from './features/Vehicles';
 
 const router = createBrowserRouter([
   {
@@ -11,20 +14,28 @@ const router = createBrowserRouter([
     errorElement: <div>Unexpected error</div>,
     children: [
       {
-        path: '/',
-        element: <People />,
+        path: '',
+        element: <PeopleList />,
       },
       {
-        path: '/:id',
-        element: <div>Person</div>,
-      },
-      {
-        path: 'vehicles',
-        element: <div>Vehicles</div>,
+        path: ':personId',
+        element: <PersonDetails />,
       },
       {
         path: 'planets',
-        element: <div>Planets</div>,
+        element: <PlanetsList />,
+      },
+      {
+        path: 'planets/:planetId',
+        element: <PlanetDetails />,
+      },
+      {
+        path: 'vehicles',
+        element: <VehiclesList />,
+      },
+      {
+        path: 'vehicles/:vehicleId',
+        element: <VehicleDetails />,
       },
     ],
   },
